@@ -27,14 +27,14 @@ public class Book {
     @Column (name = "price")
     private Double price;
 
-    @Column (name = "quantity")
-    private Integer quantity;
+    @Column (name = "total")
+    private Integer total;
 
-    public Book(String title, String author, String category, Double price, Integer quantity) {
+    public Book(String title, String author, String category, Double price, Integer total) {
         this.title = title;
         this.author = author;
         this.category = category;
         this.price = price;
-        this.quantity = quantity;
+        this.total = total;
     }
 }

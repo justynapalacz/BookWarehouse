@@ -13,7 +13,7 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -28,7 +28,7 @@ public class Client {
     private String street;
 
     @Column(name = "post_code")
-    private String post_code;
+    private String postCode;
 
     @Column(name = "phone")
     private String phone;
@@ -36,12 +36,12 @@ public class Client {
     @Column(name = "email")
     private String email;
 
-    public Client(String name, String nip, String city, String street, String post_code, String phone, String email) {
+    public Client(String name, String nip, String city, String street, String postCode, String phone, String email) {
         this.name = name;
         this.nip = nip;
         this.city = city;
         this.street = street;
-        this.post_code = post_code;
+        this.postCode = postCode;
         this.phone = phone;
         this.email = email;
     }

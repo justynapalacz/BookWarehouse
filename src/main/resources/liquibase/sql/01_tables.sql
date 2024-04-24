@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS book (
   author VARCHAR(100),
   category VARCHAR(100),
   price double,
-  quantity int
+  total int
 );
 
 CREATE TABLE IF NOT EXISTS summary (

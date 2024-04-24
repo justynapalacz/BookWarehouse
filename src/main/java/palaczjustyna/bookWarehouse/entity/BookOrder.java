@@ -16,7 +16,7 @@ public class BookOrder {
     private int id;
 
     @ManyToOne()
-//    @JoinColumn(name="order_summary_id", nullable=false)
+//   @JoinColumn(name="order_summary_id", nullable=false)
     private Summary summary;
 
     @ManyToOne()

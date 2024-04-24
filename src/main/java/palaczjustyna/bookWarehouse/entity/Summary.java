@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 @Entity
 @Data
 @Table (name = "summary")
@@ -40,8 +39,8 @@ public class Summary {
 //    @JoinColumn(name="employee_id", nullable=false)
     private Employee employee;
 
-    @OneToMany(mappedBy = "summary")
-    private List<BookOrder> bookOrderListOrder;
+//    @OneToMany(mappedBy = "summary")
+//    private List<BookOrder> bookOrderListOrder;
 
     public Summary(String number, LocalDateTime date, String status, String paymentType, Double amount, Client client, Employee employee) {
         this.number = number;
