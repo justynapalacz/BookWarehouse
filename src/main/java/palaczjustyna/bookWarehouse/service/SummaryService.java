@@ -27,8 +27,8 @@ public class SummaryService {
     }
 
     @PostMapping("/addSummary")
-    public void addSummary(@RequestBody SummaryDTO summaryDTO){
-        summaryDAO.addSummary(summaryDTO);
+    public Summary addSummary(@RequestBody SummaryDTO summaryDTO){
+        return summaryDAO.addSummary(summaryDTO);
     }
 
     @PutMapping("/updateSummary")

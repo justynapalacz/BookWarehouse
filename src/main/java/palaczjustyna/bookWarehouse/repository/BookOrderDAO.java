@@ -45,11 +45,12 @@ public class BookOrderDAO {
     }
 
     @Transactional
-    public void addBookOrder(BookOrderDTO bookOrderDTO) {
+    public BookOrder addBookOrder(BookOrderDTO bookOrderDTO) {
         Summary summary = summaryDAO.getSummaryById(bookOrderDTO.summaryId());
         Book book = bookDAO.getBookbyId(bookOrderDTO.bookId());
         BookOrder bookOrder = new BookOrder(bookOrderDTO.quantity(), book, summary);
         em.persist(bookOrder);
+        return bookOrder;
     }
 
 }

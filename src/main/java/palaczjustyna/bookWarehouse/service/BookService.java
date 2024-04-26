@@ -21,6 +21,11 @@ public class BookService {
         return bookDAO.getBookbyId(id);
     }
 
+    @GetMapping("/getBookByTitle")
+    public Book getBookByTitle(@RequestParam(value = "bookTitle") String bookTitle){
+        return bookDAO.getBookByTitle(bookTitle);
+    }
+
     @PostMapping("/addBook")
     public void addBook(@RequestParam(value = "title")  String title,@RequestParam(value = "author") String author,
                         @RequestParam (value = "category") String category,@RequestParam (value = "price") Double price,

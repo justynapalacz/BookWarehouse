@@ -24,8 +24,8 @@ public class BookOrderService {
     }
 
     @PostMapping("/addBookOrder")
-    public void addBookOrder(@RequestBody BookOrderDTO bookOrderDTO){
-        bookOrderDAO.addBookOrder(bookOrderDTO);
+    public BookOrder addBookOrder(@RequestBody BookOrderDTO bookOrderDTO){
+        return bookOrderDAO.addBookOrder(bookOrderDTO);
     }
 
 }

@@ -42,17 +42,24 @@ public class SummaryDAO {
     }
 
     @Transactional
-    public void addSummary(SummaryDTO summaryDTO) {
+    public Summary addSummary(SummaryDTO summaryDTO) {
         Client client = clientDAO.getClientById(summaryDTO.clientId());
-        Employee employee = employeeDAO.getEmployeeById(summaryDTO.employeeId());
+        Employee employee = null;
+        if(summaryDTO.employeeId() != null) {
+            employee = employeeDAO.getEmployeeById(summaryDTO.employeeId());
+        }
 
         Summary summary = new Summary(summaryDTO.number(), summaryDTO.date(), summaryDTO.status(), summaryDTO.paymentType(), summaryDTO.amount(), client, employee);
         em.persist(summary);
+        return summary;
     }
 
     @Transactional
     public void updateSummary(SummaryDTO summaryDTO) {
         Summary summary = getSummaryById(summaryDTO.id());
+        if (summaryDTO.number() != null) {
+            summary.setNumber(summaryDTO.number());
+        }
         if (summaryDTO.status() != null) {
             summary.setStatus(summaryDTO.status());
         }

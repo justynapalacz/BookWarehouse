@@ -34,6 +34,17 @@ public class BookDAO {
         return query.getSingleResult();
     }
 
+    public Book getBookByTitle(String bookTitle) {
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Book> criteriaQuery = criteriaBuilder.createQuery(Book.class);
+        Root<Book> root = criteriaQuery.from(Book.class);
+        Predicate idPredicate = criteriaBuilder.equal(root.get("title"), bookTitle);
+        criteriaQuery.where(idPredicate);
+        TypedQuery<Book> query = em.createQuery(criteriaQuery);
+        return query.getSingleResult();
+    }
+
+
     @Transactional
     public void addBook (String title, String author, String category, Double price, Integer total){
         Book book = new Book(title, author,category,price,total);
