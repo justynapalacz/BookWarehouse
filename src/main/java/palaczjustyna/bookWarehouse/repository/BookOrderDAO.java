@@ -47,9 +47,15 @@ public class BookOrderDAO {
     @Transactional
     public BookOrder addBookOrder(BookOrderDTO bookOrderDTO) {
         Summary summary = summaryDAO.getSummaryById(bookOrderDTO.summaryId());
-        Book book = bookDAO.getBookbyId(bookOrderDTO.bookId());
+        Book book = bookDAO.getBookById(bookOrderDTO.bookId());
         BookOrder bookOrder = new BookOrder(bookOrderDTO.quantity(), book, summary);
+        double amount = summary.getAmount()==null?0:summary.getAmount();
+        summary.setAmount(amount+ bookOrderDTO.quantity()*book.getPrice() );
+        int total = book.getTotal();
+        book.setTotal(total- bookOrderDTO.quantity());
+        em.persist(summary);
         em.persist(bookOrder);
+        em.persist(book);
         return bookOrder;
     }
 

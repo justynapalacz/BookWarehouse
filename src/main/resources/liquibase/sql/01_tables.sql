@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS book (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR (100),
   author VARCHAR(100),
+  isbn VARCHAR(100),
   category VARCHAR(100),
   price double,
   total int

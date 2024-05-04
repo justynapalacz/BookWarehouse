@@ -24,7 +24,7 @@ public class BookDAO {
         return em.createQuery(criteriaQuery).getResultList();
     }
 
-    public Book getBookbyId(Integer id) {
+    public Book getBookById(Integer id) {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<Book> criteriaQuery = criteriaBuilder.createQuery(Book.class);
         Root<Book> root = criteriaQuery.from(Book.class);
@@ -34,11 +34,11 @@ public class BookDAO {
         return query.getSingleResult();
     }
 
-    public Book getBookByTitle(String bookTitle) {
+    public Book getBookByIsbn(String bookIsbn) {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<Book> criteriaQuery = criteriaBuilder.createQuery(Book.class);
         Root<Book> root = criteriaQuery.from(Book.class);
-        Predicate idPredicate = criteriaBuilder.equal(root.get("title"), bookTitle);
+        Predicate idPredicate = criteriaBuilder.equal(root.get("isbn"), bookIsbn);
         criteriaQuery.where(idPredicate);
         TypedQuery<Book> query = em.createQuery(criteriaQuery);
         return query.getSingleResult();
@@ -46,14 +46,14 @@ public class BookDAO {
 
 
     @Transactional
-    public void addBook (String title, String author, String category, Double price, Integer total){
-        Book book = new Book(title, author,category,price,total);
+    public void addBook (String title, String author,String isbn, String category, Double price, Integer total){
+        Book book = new Book(title, author,isbn, category,price,total);
         em.persist(book);
     }
 
     @Transactional
     public Book updateBookTotal(Integer id,Integer total){
-        Book book = getBookbyId(id);
+        Book book = getBookById(id);
         book.setTotal(total);
         em.merge(book);
         return book;
@@ -61,7 +61,7 @@ public class BookDAO {
 
     @Transactional
     public String deleteBook (Integer id){
-        Book book = getBookbyId(id);
+        Book book = getBookById(id);
         em.remove(book);
         return "Book by id " + id + " is deleted";
     }

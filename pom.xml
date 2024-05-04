@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>palaczjustyna</groupId>
 	<artifactId>bookWarehouse</artifactId>
@@ -18,7 +18,7 @@
 		<dbUrl>jdbc:mysql://localhost:3306/bookWarehouse</dbUrl>
 		<dbUser>root</dbUser>
 		<dbPwd>root</dbPwd>
-		<dropFirst>true</dropFirst>
+		<dropFirst>false</dropFirst>
 	</properties>
 	<dependencies>
 		<dependency>

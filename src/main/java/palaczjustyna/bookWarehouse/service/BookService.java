@@ -16,21 +16,22 @@ public class BookService {
     public List<Book> getBooks() {
         return bookDAO.getBooks();
     }
-    @GetMapping("/getBookbyId")
-    public Book getBookbyId(@RequestParam(value = "id") Integer id){
-        return bookDAO.getBookbyId(id);
+    @GetMapping("/getBookById")
+    public Book getBookById(@RequestParam(value = "id") Integer id){
+        return bookDAO.getBookById(id);
     }
 
-    @GetMapping("/getBookByTitle")
-    public Book getBookByTitle(@RequestParam(value = "bookTitle") String bookTitle){
-        return bookDAO.getBookByTitle(bookTitle);
+    @GetMapping("/getBookByIsbn")
+    public Book getBookByIsbn(@RequestParam(value = "isbn") String bookIsbn){
+        return bookDAO.getBookByIsbn(bookIsbn);
     }
 
     @PostMapping("/addBook")
     public void addBook(@RequestParam(value = "title")  String title,@RequestParam(value = "author") String author,
+                        @RequestParam(value = "isbn")  String isbn,
                         @RequestParam (value = "category") String category,@RequestParam (value = "price") Double price,
                         @RequestParam (value = "total")Integer total){
-        bookDAO.addBook(title,author,category,price,total);
+        bookDAO.addBook(title,author,category,isbn, price,total);
     }
 
     @PutMapping("/updateBook")

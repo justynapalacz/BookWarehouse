@@ -21,6 +21,9 @@ public class Book {
     @Column(name = "author")
     private String author;
 
+    @Column(name = "isbn")
+    private String isbn;
+
     @Column (name = "category")
     private String category;
 
@@ -30,9 +33,10 @@ public class Book {
     @Column (name = "total")
     private Integer total;
 
-    public Book(String title, String author, String category, Double price, Integer total) {
+    public Book(String title, String author, String isbn, String category, Double price, Integer total) {
         this.title = title;
         this.author = author;
+        this.isbn = isbn;
         this.category = category;
         this.price = price;
         this.total = total;

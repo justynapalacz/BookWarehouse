@@ -10,7 +10,10 @@ import jakarta.persistence.criteria.Root;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import palaczjustyna.bookWarehouse.entity.*;
+import palaczjustyna.bookWarehouse.entity.Client;
+import palaczjustyna.bookWarehouse.entity.Employee;
+import palaczjustyna.bookWarehouse.entity.Summary;
+import palaczjustyna.bookWarehouse.entity.SummaryDTO;
 
 import java.util.List;
 
@@ -48,8 +51,10 @@ public class SummaryDAO {
         if(summaryDTO.employeeId() != null) {
             employee = employeeDAO.getEmployeeById(summaryDTO.employeeId());
         }
-
         Summary summary = new Summary(summaryDTO.number(), summaryDTO.date(), summaryDTO.status(), summaryDTO.paymentType(), summaryDTO.amount(), client, employee);
+        em.persist(summary);
+        String number = summary.getId() +"/2024";
+        summary.setNumber(number);
         em.persist(summary);
         return summary;
     }
