@@ -1,18 +1,15 @@
-package palaczjustyna.bookWarehouse.service;
+package palaczjustyna.bookWarehouse.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import palaczjustyna.bookWarehouse.entity.Employee;
-import palaczjustyna.bookWarehouse.entity.EmployeeDTO;
 import palaczjustyna.bookWarehouse.entity.Summary;
 import palaczjustyna.bookWarehouse.entity.SummaryDTO;
-import palaczjustyna.bookWarehouse.repository.EmployeeDAO;
 import palaczjustyna.bookWarehouse.repository.SummaryDAO;
 
 import java.util.List;
 
 @RestController
-public class SummaryService {
+public class SummaryController {
     @Autowired
     private SummaryDAO summaryDAO;
 

@@ -32,15 +32,10 @@ public class Summary {
     private Double amount;
 
     @ManyToOne()
-//    @JoinColumn(name="client_id", nullable=false)
     private Client client;
 
     @ManyToOne()
-//    @JoinColumn(name="employee_id", nullable=false)
     private Employee employee;
-
-//    @OneToMany(mappedBy = "summary")
-//    private List<BookOrder> bookOrderListOrder;
 
     public Summary(String number, LocalDateTime date, String status, String paymentType, Double amount, Client client, Employee employee) {
         this.number = number;

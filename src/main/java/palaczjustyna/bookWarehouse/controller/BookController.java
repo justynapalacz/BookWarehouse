@@ -1,4 +1,4 @@
-package palaczjustyna.bookWarehouse.service;
+package palaczjustyna.bookWarehouse.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +8,7 @@ import palaczjustyna.bookWarehouse.repository.BookDAO;
 import java.util.List;
 
 @RestController
-public class BookService {
+public class BookController {
     @Autowired
     private BookDAO bookDAO;
 

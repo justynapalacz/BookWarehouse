@@ -3,7 +3,7 @@
 INSERT INTO employee (id, first_name, last_name, phone, email)VALUE(1,'Jan', 'Nowak', '698123456','jan@wp.pl');
 INSERT INTO employee (id, first_name, last_name, phone, email)VALUE(2,'Anna', 'Kowalska', '696000111','akowalska@wp.pl');
 
-INSERT INTO client(id, name, nip, city ,street ,post_code ,phone ,email)VALUE(1,'Biblioteka w Czestochowie', '7891231122','Czestochowa', 'al.nmp 24', '42-200', '698123456','biblioteka@wp.pl');
+INSERT INTO client(id, name, nip, city ,street ,post_code ,phone ,email)VALUE(1,'Biblioteka w Czestochowie', '7891231122','Czestochowa', 'al.nmp 24', '42-200', '698123456','biblioteka.czewa@gmail.com');
 INSERT INTO client(id, name, nip, city ,street ,post_code ,phone ,email)VALUE(2,'Poczytaj mi', '9991112233','Czestochowa', 'al.nmp 28', '42-200', '667123456','poczytaj@wp.pl');
 INSERT INTO client(id, name, nip, city ,street ,post_code ,phone ,email)VALUE(3,'Filia nr 1', '9567891425','Wroclaw', 'Studencka 1', '50-001', '122345667','filia1@wp.pl');
 

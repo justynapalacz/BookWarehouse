@@ -18,7 +18,7 @@
 		<dbUrl>jdbc:mysql://localhost:3306/bookWarehouse</dbUrl>
 		<dbUser>root</dbUser>
 		<dbPwd>root</dbPwd>
-		<dropFirst>false</dropFirst>
+		<dropFirst>true</dropFirst>
 	</properties>
 	<dependencies>
 		<dependency>
